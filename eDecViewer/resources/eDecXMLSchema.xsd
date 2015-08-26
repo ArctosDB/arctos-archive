@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/eDecXMLSchema" xmlns:tns="http://www.example.org/eDecXMLSchema" elementFormDefault="qualified">
+
+    <annotation>
+    	<documentation>This is a non-normative representation of the structure of USFWS edec files represented as an XML schema for the purpose of code generation.</documentation></annotation>
+    <complexType name="eDec">
+    	<sequence>
+    		<element name="CoreFields" type="tns:Core" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="SpeciesFields" type="tns:Species" maxOccurs="unbounded" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="Core">
+    	<sequence>
+    		<element name="ImportExport"  minOccurs="1" maxOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="1"></length>
+    					<enumeration value="I"></enumeration>
+    					<enumeration value="E"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Port"  minOccurs="1" maxOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="2"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="IEDate" type="date"  minOccurs="1" maxOccurs="1"></element>
+    		<element name="IELicense">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="6"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Purpose"  minOccurs="1" maxOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="1"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="CustomsID" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="20"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Carrier" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="25"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="MasterWaybill" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="25"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="HouseWaybill" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="25"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="TransportationCode"  minOccurs="1" maxOccurs="1" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="1"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="AutoLicense" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="10"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="AutoState" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="2"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="BondedLocation"  minOccurs="1" maxOccurs="1" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="25"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="CartonCount"  minOccurs="1" maxOccurs="1" type="int">
+    		</element>
+    		<element name="PackageMarkings" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="25"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="IEBuisiness" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="60"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="IELastName" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="30"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="IEFirstName" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="20"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="IEMiddleName" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="20"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="IEAddress" minOccurs="1" maxOccurs="1" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="68"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="IECity"  minOccurs="1" maxOccurs="1" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="20"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="IEState" minOccurs="1" maxOccurs="1" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="2"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="IEZip"  minOccurs="1" maxOccurs="1" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="5"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="IEZipPlus4" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="4"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="IEPhone" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="15"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="ForBuisiness" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="60"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="ForLastName" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="30"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="ForFirstName" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="20"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="ForMiddleName" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="20"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="ForAddress" minOccurs="1" maxOccurs="1" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="68"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="ForCity"  minOccurs="1" maxOccurs="1" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="20"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="ForCountry" minOccurs="1" maxOccurs="1" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="2"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>    		
+    		<element name="ForPhone" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="15"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="CustomsBroker" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="80"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="CustomsBrokerPhone" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="15"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="CustomsBrokerFax" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="15"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="CustomsBrokerLastName" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="30"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="CustomsBrokerFirstName" >
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="20"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="Species">
+    	<sequence>
+    		<element name="Genus" maxOccurs="1" minOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="18"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Species" maxOccurs="1" minOccurs="0">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="18"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Subspecies" maxOccurs="1" minOccurs="0">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="18"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="CommonName" maxOccurs="1" minOccurs="0">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="36"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="ForeignCITES" maxOccurs="1" minOccurs="0">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="30"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="USCITES" maxOccurs="1" minOccurs="0">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="30"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="WildlifeCode" maxOccurs="1" minOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="3"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="SourceCode" maxOccurs="1" minOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="1"></maxLength>
+    					<enumeration value="A"></enumeration>
+    					<enumeration value="C"></enumeration>
+    					<enumeration value="D"></enumeration>
+    					<enumeration value="F"></enumeration>
+    					<enumeration value="I"></enumeration>
+    					<enumeration value="P"></enumeration>
+    					<enumeration value="R"></enumeration>
+    					<enumeration value="U"></enumeration>
+    					<enumeration value="W"></enumeration>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Quantity" type="float" maxOccurs="1" minOccurs="1">
+    		</element>
+    		<element name="Units" maxOccurs="1" minOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="2"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element name="Value" type="int" maxOccurs="1" minOccurs="1">
+    		</element>
+    		<element name="CountryOfOrigin" maxOccurs="1" minOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<maxLength value="2"></maxLength>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+    
+    <element name="eDecFile" type="tns:eDec"></element>
+</schema>

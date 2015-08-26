@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project eDecViewer">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <target name="create_run_jar">
+        <jar destfile="dist/EDec.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="edu.harvard.mcz.edec.ui.EDecViewer"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="bin"/>
+            <zipfileset excludes="META-INF/*.SF" src="/var/eclipse_indigo/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/var/eclipse_indigo/plugins/org.hamcrest.core_1.1.0.v20090501071000.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="/usr/local/java/xerces-2_10_0/xercesImpl.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="lib/xml-apis-ext.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="lib/xml-apis.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="lib/forms-1.3.0.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="lib/ecat-common-1.7-20130202.232831-35-jar-with-dependencies.jar"/>
+        </jar>
+    </target>
+</project>
