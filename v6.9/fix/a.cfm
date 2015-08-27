@@ -1,0 +1,1 @@
+    <cfset Application.mobileURL="/m">
